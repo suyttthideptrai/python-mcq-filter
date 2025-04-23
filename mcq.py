@@ -65,8 +65,17 @@ current_question = 0
 current_question_answers = []
 with open(source_file, 'r', encoding='utf-8') as infile:
     lines = infile.readlines()
+    
+    # Remove empty lines
+    tmp_lines = []
+    for line in lines:
+        l = line.strip()
+        if l != '':
+            tmp_lines.append(l)
+    lines = tmp_lines
+    
+    # Main process
     for i, line in enumerate(lines):
-        line = line.strip()
         first_two_chars = line[:2]
         if first_two_chars in ANSWER_STARTS_WITH:
             
