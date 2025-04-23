@@ -1,3 +1,7 @@
+# Usages
+
+Extract đáp án + format câu hỏi/ đáp án từ file mcq và short answer
+
 # Instructions
 
 ## MCQ Formating:
