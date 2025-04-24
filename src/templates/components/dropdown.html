@@ -1,0 +1,11 @@
+<div>
+
+    <label for="{{id}}">{{label}}</label>
+
+    <select name="{{id}}" id="{{id}}">
+        {% for value in values %}
+            <option value="{{ value }}" {% if default_value == value %}selected{% endif %}>{{ value }}</option>
+        {% endfor %}
+    </select>
+
+</div>

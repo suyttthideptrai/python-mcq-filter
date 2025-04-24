@@ -1,6 +1,6 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
-from python.components.abstract_component import AbstractComponent
+from components.abstract_component import AbstractComponent
 
 
 
@@ -8,10 +8,13 @@ class AbstractFormInput(AbstractComponent):
     
     TYPES = ["text", "file", "textarea", "checkbox", "dropdown"]
     
-    def __init__(self, classname: str, id: str, label: str, type: str = "text"):
+    def __init__(self, classname: str, id: str, label: str, type: str):
         super().__init__(classname)
         self.id = id
         self.label = label
+        self.type = type
+        if type not in self.TYPES:
+            raise ValueError(f"Invalid type: {type}. Must be one of {self.TYPES}.")
     
     
     def get_input_id(self) -> str:
@@ -29,7 +32,7 @@ class AbstractFormInput(AbstractComponent):
         """
         return f"<div classname=\"{self.classname}\">abstract html</div>"
     
-    def get_javascript_function(self) -> str:
+    def get_value_js_function(self) -> str:
         """
         Get the JavaScript function for the component.
         :return: JavaScript function string.
