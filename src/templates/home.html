@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Top Nav */
+        nav {
+            background-color: #343a40;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .navbar-layout {
+            flex: 0 0 10%;
+            background-color: #495057;
+            color: #fff;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Layout Wrapper */
+        .main-layout {
+            flex: 1 1 80%;
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        /* Sidebar */
+        .sidebar-layout {
+            width: 20%;
+            background-color: #dee2e6;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Main Content */
+        .workspace-layout {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Footer (Bottom aside) */
+        .footer-layout {
+            flex: 0 0 10%;
+            background-color: #ced4da;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .sidebar-layout {
+                width: 100%;
+            }
+
+            .workspace-layout {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar-layout">
+        <div class="navbar-individual">
+    <a href="/" class="navbar-brand">MyWebsite</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="/about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+            <a href="/services" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+            <a href="/contact" class="nav-link">Contact</a>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    <div class="main-layout">
+
+        <aside class="sidebar-layout">
+            <div class="sidebar-individual">
+    <div>
+        <h3>
+            Hello sir, heres the sidebar
+        </h3>
+    </div>
+    <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        {{ sidebar_nav_items|safe }}
+    </ul>
+</div>
+
+        </aside>
+
+        <main class="workspace-layout">
+            <p>Yessir</p>
+        </main>
+
+    </div>
+
+    <footer class="footer-layout">
+            <div class="footer-individual">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <ul class="footer-links">
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-service">Terms of Service</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+    </ul>
+</div>
+
+    </footer>
+</body>
+</html>
